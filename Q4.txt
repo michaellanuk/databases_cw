@@ -1,0 +1,3 @@
+select customer_id, sum(amount) as total from payment
+	group by customer_id
+	having sum(amount) > 200

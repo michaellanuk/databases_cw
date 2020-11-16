@@ -1,0 +1,10 @@
+select * from
+	(select staff_id as most_transactions from payment 
+		group by staff_id
+		order by count(staff_id) desc
+		limit 1),
+	(select staff_id as biggest_sum from payment
+		group by staff_id
+		order by sum(amount) desc
+		limit 1)
+

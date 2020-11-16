@@ -1,0 +1,6 @@
+select title from film
+	where film.film_id in (select film_id from inventory
+		inner join rental on rental.inventory_id = inventory.inventory_id
+		where return_date between '2005-05-29' and '2005-05-30')
+
+	

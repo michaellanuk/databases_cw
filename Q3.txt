@@ -1,0 +1,3 @@
+select store_id from customer
+	group by store_id
+	having count(store_id) > 300
